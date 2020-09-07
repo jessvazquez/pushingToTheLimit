@@ -5,6 +5,7 @@
  */
 package pkg.access;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -68,10 +69,10 @@ public class ConexionAccess {
     public static Connection obtenerConexion() {
 
         try {
-            
-            if(con==null){
-                Class.forName(driver);
-                con = DriverManager.getConnection(url);
+
+            if (getCon() == null) {
+                Class.forName(getDriver());
+                con = DriverManager.getConnection(getUrl());
                 JOptionPane.showMessageDialog(null, "Conexion correcta!");
             }
 
@@ -83,7 +84,7 @@ public class ConexionAccess {
              */
             e.printStackTrace();
             con = null;
-            System.out.println("Error: " + e);
+//            System.out.println("Error: " + e);
         }
         return null;
 

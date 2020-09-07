@@ -5,12 +5,17 @@
  */
 package pkg.access;
 
+import java.sql.Connection;
+
 /**
  *
  * @author deivi
  */
 public class PrbAccess {
+
     public static void main(String[] args) {
-        
+
+        Connection cn = ConexionAccess.obtenerConexion();
+
     }
 }
